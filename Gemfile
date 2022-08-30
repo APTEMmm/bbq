@@ -20,10 +20,15 @@ gem 'russian'
 gem 'rails-i18n', '~> 5.1'
 
 gem 'carrierwave'
+gem 'fog-aws'
+gem 'image_processing', '~> 1.2'
 gem 'rmagick'
+gem 'aws-sdk-s3'
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'dotenv-rails'
+  gem 'rubocop'
   gem 'sqlite3'
 end
 
