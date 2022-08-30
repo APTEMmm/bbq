@@ -1,10 +1,36 @@
 module ApplicationHelper
   def user_avatar(user)
-    # TODO: user real avatar
-    asset_path('user.png')
+    user.avatar.url || asset_path('user.png')
+  end
+
+  def user_avatar_thumb(user)
+      user.avatar.thumb.url || asset_path('user.png')
   end
 
   def fa_icon(icon_class)
     content_tag 'span', '', class: "fa fa-#{icon_class}"
+  end
+
+  # Возвращает адрес рандомной фотки события, если есть хотя бы одна
+  # Или ссылку на картинку по умолчанию
+  def event_photo(event)
+    photos = event.photos.persisted
+
+    if photos.any?
+      photos.sample.photo.url
+    else
+      asset_path('event.jpg')
+    end
+  end
+
+  # Возвращает миниатюрную версию фотки
+  def event_thumb(event)
+    photos = event.photos.persisted
+
+    if photos.any?
+      photos.sample.photo.thumb.url
+    else
+      asset_path('event_thumb.jpg')
+    end
   end
 end
