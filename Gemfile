@@ -19,17 +19,18 @@ gem 'russian'
 
 gem 'rails-i18n', '~> 5.1'
 
+gem 'aws-sdk-s3', require: false
 gem 'carrierwave'
 gem 'fog-aws'
-gem 'image_processing', '~> 1.2'
 gem 'rmagick'
-gem 'aws-sdk-s3'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'dotenv-rails'
+  gem 'image_processing', '~> 1.2'
   gem 'rubocop'
   gem 'sqlite3'
+  gem 'web-console'
 end
 
 group :production do

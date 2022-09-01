@@ -3,13 +3,14 @@ class User < ApplicationRecord
   has_many :events
   has_many :comments
   has_many :subscriptions
+  has_one_attached :avatar
 
   validates :name, presence: true, length: { maximum: 35 }
 
   before_validation :set_name, on: :create
   after_commit :link_subscriptions, on: :create
 
-  mount_uploader :avatar, AvatarUploader
+  #mount_uploader :avatar, AvatarUploader
 
   def set_name
     self.name = "Товарищ №#{rand(777)}" if name.blank?
