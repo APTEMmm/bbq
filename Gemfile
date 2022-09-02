@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.5'
+ruby '2.7.6'
 
-gem 'rails', '~> 5.2.8', '>= 5.2.8.1'
+gem 'rails', '~> 6.1.6', '>= 6.1.6.1'
 
 gem 'twitter-bootstrap-rails'
 
@@ -16,8 +16,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'devise-i18n'
 gem 'russian'
-
-gem 'rails-i18n', '~> 5.1'
+gem 'rails-i18n', '~> 6.0'
 
 gem 'aws-sdk-s3', require: false
 gem 'carrierwave'
@@ -26,7 +25,6 @@ gem 'rmagick'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'dotenv-rails'
   gem 'image_processing', '~> 1.2'
   gem 'rubocop'
   gem 'sqlite3'

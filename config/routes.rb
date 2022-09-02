@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'events#index'
+  root to: 'events#index'
 
   resources :events do
     resources :comments, only: %i[create destroy]
