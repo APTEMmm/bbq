@@ -15,7 +15,6 @@ gem 'jquery-rails'
 
 gem 'devise'
 gem 'devise-i18n'
-gem 'russian'
 gem 'rails-i18n', '~> 6.0'
 
 gem 'aws-sdk-s3', require: false
