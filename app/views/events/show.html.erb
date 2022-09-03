@@ -17,6 +17,10 @@
           <% if current_user_can_edit?(@event) %>
             <div class="buffer-top">
               <%= link_to I18n.t('buttons.edit'), edit_event_path(@event), class: 'btn btn-primary' %>
+              <% if @event.user == current_user %>
+                  <%= link_to I18n.t('buttons.delete_event'), event_path(@event), method: :delete,
+                              data: { confirm: I18n.t('events.event.destroy_confirm') }, class: 'btn btn-danger' %>
+              <% end %>
             </div>
           <% end %>
         </div>

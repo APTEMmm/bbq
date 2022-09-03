@@ -58,11 +58,15 @@ ru:
 
   comments:
     comment:
-    destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
+      destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
 
   subscriptions:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+
+  events:
+    event:
+      destroy_confirm: 'Вы уверены, что хотите удалить это событие?'
 
   buttons:
     forgot_your_password?: 'Забыли пароль?'
@@ -77,6 +81,7 @@ ru:
     send: 'Отправить'
     save: 'Сохранить'
     edit_profile: 'Редактировать профиль!'
+    delete_event: 'Удалить событие'
 
   title:
     form:
