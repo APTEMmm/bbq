@@ -1,5 +1,5 @@
 <div class="card">
-  <h2 class="card-header"><%= I18n.t('forms.sign_up') %></h2>
+  <h2 class="card-header"><%= I18n.t('title.form.sign_up') %></h2>
   <div class="card-body">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
@@ -12,7 +12,7 @@
       <div class="field form-group">
         <%= f.label :password %>
         <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> <%= I18n.t('forms.text.password_validation') %>)</em>
+        <em>(<%= @minimum_password_length %> <%= I18n.t('form_text.password_validation') %>)</em>
         <% end %><br />
         <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
       </div>
