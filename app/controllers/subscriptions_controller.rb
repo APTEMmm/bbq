@@ -3,10 +3,12 @@ class SubscriptionsController < ApplicationController
   before_action :set_subscription, only: [:destroy]
 
   def create
-    @new_subscription = @event.subscriptions.build(subscription_params)
-    @new_subscription.user = current_user
+    unless User.find_by(email: params[:subscription][:user_email]).present?
+      @new_subscription = @event.subscriptions.build(subscription_params)
+      @new_subscription.user = current_user
+    end
 
-    if @new_subscription.save
+    if @new_subscription&.save
       redirect_to @event, notice: I18n.t('controllers.subscriptions.created')
     else
       render 'events/show', alert: I18n.t('controllers.subscriptions.error')
