@@ -33,4 +33,8 @@ class SubscriptionsController < ApplicationController
   def set_subscription
     @subscription = @event.subscriptions.find(params[:id])
   end
+
+  def subscription_params
+    params.fetch(:subscription, {}).permit(:user_name, :user_email)
+  end
 end
