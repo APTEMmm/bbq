@@ -17,7 +17,8 @@
           <% if current_user_can_edit?(@event) %>
             <div class="buffer-top">
               <%= link_to I18n.t('buttons.edit'), edit_event_path(@event), class: 'btn btn-primary' %>
-            </div><br/>
+            </div>
+            <br/>
           <% end %>
         </div>
       </div>
@@ -32,12 +33,12 @@
         <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
       </div>
       <div class="event-photo-form">
-        <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
+        <%= render partial: 'photos/form', locals: { photo: @new_photo || @event.photos.build } %>
       </div>
     </div>
     <div class="event-comments buffer-top">
 
-      <%= render partial: 'comments/form', locals: {comment: @new_comment || @event.comments.build} %>
+      <%= render partial: 'comments/form', locals: { comment: @new_comment || @event.comments.build } %>
 
       <div class="buffer-both">
         <%= render partial: 'comments/comment',
@@ -59,13 +60,15 @@
         </p>
       </div>
     </div>
-    <div class="event-subscription-form">
-      <h4><%= I18n.t('show.event.i_will_go') %>:</h4>
-      <div>
-        <%= render partial: 'subscriptions/form', locals: {
-          subscription: @new_subscription || @event.subscriptions.build
-        } %>
+    <% unless event_owner?(current_user, @event) || already_subscribed?(current_user, @event)%>
+      <div class="event-subscription-form">
+        <h4><%= I18n.t('show.event.i_will_go') %></h4>
+        <div>
+          <%= render partial: 'subscriptions/form', locals: {
+            subscription: @new_subscription || @event.subscriptions.build
+          } %>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
