@@ -109,6 +109,9 @@ ru:
     few: '%{count} ошибок'
     many: '%{count} ошибок'
     saving_failed_due_to: 'Сохранение не удалось из-за'
+    subscriptions:
+      own_event: 'Нельзя подписаться на собственное событие'
+      email_already_exist: 'уже используется'
 
   show:
     event:

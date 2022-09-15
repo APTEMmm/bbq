@@ -1,9 +1,9 @@
 module EventsHelper
-  def event_owner?(current_user, event)
-    current_user == event.user
-  end
-
-  def already_subscribed?(user, event)
-    user.present? ? user.subscriptions.find_by(event_id: event.id).present? : false
+  def current_user_can_subscribe?(event)
+    if current_user == event.user || event.subscribers.include?(current_user)
+      false
+    else
+      true
+    end
   end
 end

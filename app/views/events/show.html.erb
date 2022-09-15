@@ -60,7 +60,7 @@
         </p>
       </div>
     </div>
-    <% unless event_owner?(current_user, @event) || already_subscribed?(current_user, @event)%>
+    <% if current_user_can_subscribe?(@event) %>
       <div class="event-subscription-form">
         <h4><%= I18n.t('show.event.i_will_go') %></h4>
         <div>
