@@ -23,6 +23,7 @@ gem 'fog-aws'
 gem 'rmagick'
 
 gem 'mailjet'
+gem 'letter_opener'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
