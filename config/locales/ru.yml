@@ -89,6 +89,10 @@ ru:
       event: 'Событие'
       datetime: 'Состоится'
       owner: 'Организатор'
+      errors:
+        empty: 'Файл пустой'
+        wrong_format: 'Неправильный формат файла (доступны: jpeg jpg png)'
+
   buttons:
     forgot_your_password?: 'Забыли пароль?'
     log_in: 'Войти'
