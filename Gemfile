@@ -22,6 +22,8 @@ gem 'carrierwave'
 gem 'fog-aws'
 gem 'rmagick'
 
+gem 'mailjet'
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'image_processing', '~> 1.2'
