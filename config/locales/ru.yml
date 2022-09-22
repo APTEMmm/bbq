@@ -108,6 +108,10 @@ ru:
     edit_profile: 'Редактировать профиль!'
     delete_event: 'Удалить событие'
 
+  devise:
+    new_password: 'Новый пароль'
+    confirm_new_password: 'Подтвердите новый пароль'
+
   title:
     form:
       log_in: 'Вход'
