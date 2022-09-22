@@ -5,13 +5,15 @@ ruby '2.7.6'
 
 gem 'rails', '~> 6.1.6', '>= 6.1.6.1'
 
-gem 'twitter-bootstrap-rails'
-
 gem 'puma', '~> 3.11'
 
-gem 'uglifier', '>= 1.3.0'
+gem 'jbuilder', '~> 2.7'
+gem 'webpacker', '~> 5.0'
+gem 'sass-rails', '>= 6'
+gem 'turbolinks', '~> 5'
 
-gem 'jquery-rails'
+gem 'bootsnap', '>= 1.4.4', require: false
+gem 'font-awesome-rails'
 
 gem 'devise'
 gem 'devise-i18n'
