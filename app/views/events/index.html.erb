@@ -1,9 +1,9 @@
 <h1><%= I18n.t('title.event.events') %></h1>
 
-<div class="buffer-both">
+<div class="my-2">
   <%= link_to 'Создать событие', new_event_path, class: 'btn btn-success' %>
 </div>
 
-<div class="row buffer-bottom">
+<div class="row my-2">
   <%= render partial: 'events/event', collection: @events %>
 </div>

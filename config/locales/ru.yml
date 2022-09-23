@@ -98,6 +98,8 @@ ru:
   buttons:
     forgot_your_password?: 'Забыли пароль?'
     log_in: 'Войти'
+    log_out: 'Выйти'
+    profile: 'Профиль'
     sign_up: 'Зарегистрироваться'
     send_me_reset_password_instructions: 'Отправить инструкции по смене пароля'
     change_password: 'Сменить пароль'
