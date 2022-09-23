@@ -21,5 +21,7 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  user: <%= Rails.application.credentials.dig(:vps, :db, :username) %>
+  password: <%= Rails.application.credentials.dig(:vps, :db, :password) %>
+  database: <%= Rails.application.credentials.dig(:vps, :db, :database) %>
