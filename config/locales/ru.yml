@@ -69,9 +69,12 @@ ru:
   events:
     event:
       destroy_confirm: 'Вы уверены, что хотите удалить это событие?'
+      pincode: 'Пин-код'
 
   event_mailer:
     comment:
+      name: 'Имя'
+      email: 'Email'
       subject: "Новая комментарий @ %{event}"
       title: 'Новый комментарий'
       author: 'Автор'
@@ -110,10 +113,17 @@ ru:
     update: 'Обновить'
     back: 'Назад'
     edit: 'Изменить'
+    create_event: 'Создать событие'
+    to_main: 'На главную'
     send: 'Отправить'
     save: 'Сохранить'
     edit_profile: 'Редактировать профиль!'
     delete_event: 'Удалить событие'
+    upload: 'Загрузить'
+    subscribe: 'Подписаться'
+    didnot_receive_confirmation_instructions?: 'Не получили инструкции по подтверждению?'
+    didnot_receive_unlock_instructions?: 'Не получили инструкции по разблокировке?'
+    sign_in_with: 'Войти в систему с'
 
   devise:
     new_password: 'Новый пароль'
@@ -131,6 +141,7 @@ ru:
       edit: 'Редактирование события'
       events: 'События'
       new: 'Новое событие'
+      pincode: 'Доступ только по пинкоду'
     user:
       edit: 'Редактирование профиля'
       new: 'Новый пользователь'
@@ -160,3 +171,4 @@ ru:
 
   words:
     or: 'или'
+    added: 'Добавил'
