@@ -10,7 +10,7 @@ class User < ApplicationRecord
   before_validation :set_name, on: :create
   after_commit :link_subscriptions, on: :create
 
-  #mount_uploader :avatar, AvatarUploader
+  validates :avatar, content_type: [:png, :jpg, :jpeg]
 
   def set_name
     self.name = "Товарищ №#{rand(777)}" if name.blank?

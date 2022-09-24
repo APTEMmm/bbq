@@ -6,17 +6,6 @@ class PhotosController < ApplicationController
     @new_photo = @event.photos.build(photo_params)
     @new_photo.user = current_user
 
-    if params[:photo].nil?
-      redirect_to @event, alert: I18n.t('event_mailer.photo.errors.empty')
-      return
-    end
-
-    original_filename = params[:photo][:photo].original_filename
-    if  %w[.jpeg .jpg .png].exclude?(File.extname(original_filename).downcase)
-      redirect_to @event, alert: I18n.t('event_mailer.photo.errors.wrong_format')
-      return
-    end
-
     if @new_photo.save
       notify_subscribers(@event, @new_photo)
 
@@ -56,7 +45,7 @@ class PhotosController < ApplicationController
     all_emails = (event.subscriptions.map(&:user_email) + [event.user.email] - [photo.user.email]).uniq
 
     all_emails.each do |mail|
-      EventMailer.photo(event, photo, mail).deliver_now
+      EventMailer.photo(photo, mail).deliver_now
     end
   end
 end
