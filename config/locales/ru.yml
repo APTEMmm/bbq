@@ -128,6 +128,10 @@ ru:
   devise:
     new_password: 'Новый пароль'
     confirm_new_password: 'Подтвердите новый пароль'
+    placeholder:
+      email: 'name@example.com'
+      password: 'Пароль'
+
 
   title:
     form:

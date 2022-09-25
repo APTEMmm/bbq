@@ -1,11 +1,11 @@
 <% errors = model.errors %>
 
 <% if errors.any? %>
-  <div class="alert alert-danger">
-    <div class="lead buffer-bottom">
+  <div id="error_explanation" class="alert alert-danger alert-dismissible">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <h2>
       <%= I18n.t('error.saving_failed_due_to') %> <%= I18n.t :error, count: errors.count %>
-    </div>
-
+    </h2>
     <ul>
       <% errors.full_messages.each do |message| %>
         <li><%= message %></li>
