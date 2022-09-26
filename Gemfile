@@ -37,6 +37,7 @@ group :production do
   gem 'capistrano-passenger', '~> 0.2'
   gem 'capistrano-rbenv', '~> 2.1'
   gem 'capistrano-bundler', '~> 1.2'
+  gem 'capistrano-yarn', '~> 2.0', '>= 2.0.2'
 end
 
 group :development do
