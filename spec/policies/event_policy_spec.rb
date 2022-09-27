@@ -22,13 +22,42 @@ RSpec.describe EventPolicy do
   let(:event) { FactoryBot.build(:event, user: event_owner) }
   let(:event_with_pin) { FactoryBot.build(:event, user: event_owner, pincode: '1234') }
 
-  permissions :update?, :edit?, :destroy? do
-    it 'gives access if user is event creator' do
-      expect(subject).to permit(event_owner_context, event)
+  permissions :update? do
+    context 'user is event creator' do
+      it 'gives access to update event' do
+        expect(subject).to permit(event_owner_context, event)
+      end
     end
+    context 'user is not event creator' do
+      it 'denies access to update event' do
+        expect(subject).not_to permit(user_context, event)
+      end
+    end
+  end
 
-    it 'denies access if user is not event creator' do
-      expect(subject).not_to permit(user_context, event)
+  permissions :edit? do
+    context 'user is event creator' do
+      it 'gives access to edit event' do
+        expect(subject).to permit(event_owner_context, event)
+      end
+    end
+    context 'user is not event creator' do
+      it 'denies access to edit event' do
+        expect(subject).not_to permit(user_context, event)
+      end
+    end
+  end
+
+  permissions :destroy? do
+    context 'user is event creator' do
+      it 'gives access to delete event' do
+        expect(subject).to permit(event_owner_context, event)
+      end
+    end
+    context 'user is not event creator' do
+      it 'denies access to delete event' do
+        expect(subject).not_to permit(user_context, event)
+      end
     end
   end
 
