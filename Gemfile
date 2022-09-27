@@ -22,12 +22,14 @@ gem 'image_processing', '~> 1.2'
 gem 'mailjet'
 gem 'active_storage_validations'
 
+gem 'pundit'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rubocop', require: false
   gem 'sqlite3'
-
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :production do

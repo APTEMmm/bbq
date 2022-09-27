@@ -176,3 +176,5 @@ ru:
   words:
     or: 'или'
     added: 'Добавил'
+  pundit:
+    not_authorized: 'Вам сюда нельзя!'
