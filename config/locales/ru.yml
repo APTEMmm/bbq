@@ -70,6 +70,12 @@ ru:
     event:
       destroy_confirm: 'Вы уверены, что хотите удалить это событие?'
       pincode: 'Пин-код'
+  user_mailer:
+    registration:
+      title: 'Вы успешно зарегистрировались!'
+      subject: "Добро пожаловать на шашлыки!"
+      name: 'Имя'
+      email: 'Email'
 
   event_mailer:
     comment:
@@ -176,5 +182,6 @@ ru:
   words:
     or: 'или'
     added: 'Добавил'
+    link: 'Ссылка на сайт'
   pundit:
     not_authorized: 'Вам сюда нельзя!'
