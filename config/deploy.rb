@@ -31,7 +31,7 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "tmp/webpack
 set :rbenv_roles, :all
 set :rbenv_ruby, '2.7.6'
 #set :rbenv_ruby_dir, '/home/artem/.rbenv/shims/ruby'
-set :default_env, { path: "$PATH:/run/user/1000/fnm_multishells/1730_1664203604830/bin/" }
+set :default_env, { path: "$PATH:/home/artem/.fnm/node-versions/v16.17.1/installation/bin/" }
 # Default value for local_user is ENV['USER']
 # set :local_user, -> { `git config user.name`.chomp }
 
