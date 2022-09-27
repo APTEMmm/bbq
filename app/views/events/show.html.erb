@@ -71,6 +71,12 @@
             subscription: @new_subscription || @event.subscriptions.build
           } %>
         </div>
+    <% end %>
+    <% if sub?(current_user, @event) %>
+      <%= link_to I18n.t('subscriptions.subscription.ubsub'),
+                  event_subscription_path(@event.id, subscription_path(current_user, @event)),
+                  method: :delete,
+                  data: { confirm: I18n.t('subscriptions.subscription.ubsub_confirm') }, class: 'btn btn-danger' %>
       </div>
     <% end %>
   </div>

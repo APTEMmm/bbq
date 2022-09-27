@@ -65,6 +65,8 @@ ru:
   subscriptions:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+      ubsub_confirm: 'Вы уверены, что хотите отписаться?'
+      ubsub: 'Отписаться'
 
   events:
     event:

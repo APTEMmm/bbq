@@ -1,9 +1,13 @@
 module EventsHelper
   def current_user_can_subscribe?(event)
-    if current_user == event.user || event.subscribers.include?(current_user)
-      false
-    else
-      true
-    end
+    !(current_user == event.user || event.subscribers.include?(current_user))
+  end
+
+  def sub?(user, event)
+    event.subscriptions.find_by(user_id: user.id).present?
+  end
+
+  def subscription_path(user, event)
+    event.subscriptions.find_by(user_id: user.id).id
   end
 end
