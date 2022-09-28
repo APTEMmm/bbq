@@ -21,15 +21,22 @@ gem 'aws-sdk-s3', require: false
 gem 'image_processing', '~> 1.2'
 gem 'mailjet'
 gem 'active_storage_validations'
-
+gem 'resque'
 gem 'pundit'
 
+
+gem 'omniauth'
+gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+gem "omniauth-rails_csrf_protection"
+
+group :test do
+  gem 'factory_bot_rails'
+end
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rubocop', require: false
   gem 'sqlite3'
   gem 'rspec-rails'
-  gem 'factory_bot_rails'
 end
 
 group :production do
