@@ -4,10 +4,10 @@ module EventsHelper
   end
 
   def sub?(user, event)
-    event.subscriptions.find_by(user_id: user.id).present?
+    event.subscriptions.find_by(user_id: user&.id).present?
   end
 
   def subscription_path(user, event)
-    event.subscriptions.find_by(user_id: user.id).id
+    event.subscriptions.find_by(user_id: user&.id).id
   end
 end
