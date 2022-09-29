@@ -22,4 +22,20 @@ class EventPolicy < ApplicationPolicy
   def destroy?
     update?
   end
+
+  def create?
+    @user.present?
+  end
+
+  def new?
+    create?
+  end
+
+  private
+
+  class Scope < Scope
+    def resolve
+      scope.all
+    end
+  end
 end

@@ -67,6 +67,24 @@ RSpec.describe EventPolicy do
     end
   end
 
+  permissions :create? do
+    it 'allows access to any logged_in user' do
+      is_expected.to permit(user, Event)
+    end
+    it 'denies access to anonymous user' do
+      is_expected.not_to permit(nil, Event)
+    end
+  end
+
+  permissions :new? do
+    it 'allows access to any logged_in user' do
+      is_expected.to permit(user, Event)
+    end
+    it 'denies access to anonymous user' do
+      is_expected.not_to permit(nil, Event)
+    end
+  end
+
   permissions :show? do
     context 'user is event owner' do
       it 'shows event' do
