@@ -43,4 +43,8 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token.first(16)
     end
   end
+
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
+  end
 end
