@@ -46,6 +46,7 @@ group :production do
   gem 'capistrano-rails', '~> 1.2'
   gem 'capistrano-rbenv', '~> 2.1'
   gem 'capistrano-yarn', '~> 2.0', '>= 2.0.2'
+  gem 'capistrano-resque', '~> 0.2.3', require: false
   gem 'pg'
 end
 
