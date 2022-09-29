@@ -24,9 +24,10 @@ gem 'active_storage_validations'
 gem 'resque'
 gem 'pundit'
 
-
 gem 'omniauth'
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+gem 'omniauth-vkontakte'
+gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
 
 group :test do
