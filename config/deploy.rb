@@ -1,14 +1,14 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.17.1"
+lock '~> 3.17.1'
 
-set :application, "bbq"
-set :repo_url, "https://github.com/APTEMmm/bbq"
+set :application, 'bbq'
+set :repo_url, 'https://github.com/APTEMmm/bbq'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/home/artem/bbq"
+set :deploy_to, '/home/artem/bbq'
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -21,17 +21,18 @@ set :deploy_to, "/home/artem/bbq"
 # set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, "config/database.yml", 'config/master.key'
+append :linked_files, 'config/database.yml', 'config/master.key'
 
 # Default value for linked_dirs is []
-append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "tmp/webpacker", "public/system", "vendor", "storage"
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'tmp/webpacker', 'public/system', 'vendor',
+       'storage'
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 set :rbenv_roles, :all
 set :rbenv_ruby, '2.7.6'
-#set :rbenv_ruby_dir, '/home/artem/.rbenv/shims/ruby'
-set :default_env, { path: "$PATH:/home/artem/.fnm/node-versions/v16.17.1/installation/bin/" }
+# set :rbenv_ruby_dir, '/home/artem/.rbenv/shims/ruby'
+set :default_env, { path: '$PATH:/home/artem/.fnm/node-versions/v16.17.1/installation/bin/' }
 # Default value for local_user is ENV['USER']
 # set :local_user, -> { `git config user.name`.chomp }
 

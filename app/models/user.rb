@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:github, :vkontakte]
+         :omniauthable, omniauth_providers: %i[github vkontakte]
   has_many :events
   has_many :comments
   has_many :subscriptions
@@ -11,7 +11,7 @@ class User < ApplicationRecord
   before_validation :set_name, on: :create
   after_commit :link_subscriptions, on: :create
 
-  validates :avatar, content_type: [:png, :jpg, :jpeg]
+  validates :avatar, content_type: %i[png jpg jpeg]
 
   def set_name
     self.name = "Товарищ №#{rand(777)}" if name.blank?

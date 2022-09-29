@@ -12,12 +12,18 @@ RSpec.describe EventPolicy do
   let(:user_context_with_wrong_pin) { UserContext.new(user, {}, '12345') }
   let(:anonymous_context_with_correct_pin) { UserContext.new(nil, {}, '1234') }
 
-  let(:user_context_with_correct_cookies) { UserContext.new(user,
-                                                            { "events_#{event_with_pin.id}_pincode" => '1234' }, '') }
-  let(:user_context_with_wrong_cookies) { UserContext.new(user,
-                                                          { "events_#{event_with_pin.id}_pincode" => '12345' }, '') }
-  let(:anonymous_context_with_correct_cookies) { UserContext.new(nil,
-                                                                 { "events_#{event_with_pin.id}_pincode" => '1234' }, '') }
+  let(:user_context_with_correct_cookies) do
+    UserContext.new(user,
+                    { "events_#{event_with_pin.id}_pincode" => '1234' }, '')
+  end
+  let(:user_context_with_wrong_cookies) do
+    UserContext.new(user,
+                    { "events_#{event_with_pin.id}_pincode" => '12345' }, '')
+  end
+  let(:anonymous_context_with_correct_cookies) do
+    UserContext.new(nil,
+                    { "events_#{event_with_pin.id}_pincode" => '1234' }, '')
+  end
 
   let(:event) { FactoryBot.build(:event, user: event_owner) }
   let(:event_with_pin) { FactoryBot.build(:event, user: event_owner, pincode: '1234') }

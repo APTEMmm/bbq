@@ -36,7 +36,7 @@ RSpec.describe User, type: :model do
     context 'when user is found by provider + url' do
       let!(:existing_user) do
         FactoryBot.build(:user, provider: 'github',
-               url: 'https://github.com/10213477015136709')
+                                url: 'https://github.com/10213477015136709')
       end
       let!(:some_other_uer) { FactoryBot.build(:user) }
 

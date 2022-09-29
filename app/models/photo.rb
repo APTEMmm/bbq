@@ -5,7 +5,7 @@ class Photo < ApplicationRecord
   validates_presence_of :event, :user
   has_one_attached :photo
 
-  validates :photo, attached: true, content_type: [:png, :jpg, :jpeg]
+  validates :photo, attached: true, content_type: %i[png jpg jpeg]
 
   scope :persisted, -> { where 'id IS NOT NULL' }
 end
