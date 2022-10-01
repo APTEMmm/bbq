@@ -1,10 +1,10 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[github google_oauth2]
-  has_many :events
-  has_many :comments
-  has_many :subscriptions
-  has_one_attached :avatar
+  has_many :events, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :subscriptions, dependent: :destroy
+  has_one_attached :avatar, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 35 }
 
