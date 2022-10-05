@@ -1,0 +1,9 @@
+<div class="mt-2 d-flex align-items-center">
+  <%= link_to((render partial: 'users/user', object: photo.user), user_path) %>
+  <% if current_user_can_edit?(photo) %>
+    <%= button_to I18n.t('buttons.delete'), event_photo_path(photo.event, photo),
+                  method: :delete,
+                  form: { data: { confirm: I18n.t('photos.photo.destroy_confirm') } },
+                  class: 'border-0 bg-transparent link-danger ms-4 fw-bold' %>
+  <% end %>
+</div>

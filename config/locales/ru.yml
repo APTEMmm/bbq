@@ -68,10 +68,15 @@ ru:
       ubsub_confirm: 'Вы уверены, что хотите отписаться?'
       ubsub: 'Отписаться'
 
+  photos:
+    photo:
+      destroy_confirm: 'Вы уверены, что хотите удалить фото?'
+
   events:
     event:
       destroy_confirm: 'Вы уверены, что хотите удалить это событие?'
       pincode: 'Пин-код'
+
   user_mailer:
     registration:
       title: 'Вы успешно зарегистрировались!'
@@ -132,6 +137,7 @@ ru:
     didnot_receive_confirmation_instructions?: 'Не получили инструкции по подтверждению?'
     didnot_receive_unlock_instructions?: 'Не получили инструкции по разблокировке?'
     sign_in_with: 'Войти с помощью'
+    delete: 'Удалить'
 
   devise:
     new_password: 'Новый пароль'

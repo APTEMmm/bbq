@@ -12,6 +12,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap/dist/js/bootstrap'
 import 'stylesheets/application'
+import 'lightbox2/dist/js/lightbox-plus-jquery'
 
 Rails.start()
 Turbolinks.start()

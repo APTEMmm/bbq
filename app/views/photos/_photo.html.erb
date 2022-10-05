@@ -1,6 +1,4 @@
-<div class="event-photo buffer-both">
-
-  <%= link_to image_tag(photo.photo.variant(resize: "150x150")), photo.photo %>
-
-  <%= I18n.t('words.added') %> <%= render partial: 'users/user', object: photo.user %>
-</div>
+<%= link_to (image_tag photo.photo.variant(resize_to_fill: [150, 150])),
+            url_for(photo.photo),
+            data: { lightbox: 'photo-collection',
+                    title: (render partial: 'photos/photos_collection', locals: { photo: photo }) } %>

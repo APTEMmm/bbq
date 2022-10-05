@@ -35,7 +35,7 @@
       <div class="event-photos-gallery">
         <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
       </div>
-      <div class="event-photo-form">
+      <div class="event-photo-form mt-2">
         <%= render partial: 'photos/form', locals: { photo: @new_photo || @event.photos.build } %>
       </div>
     </div>
