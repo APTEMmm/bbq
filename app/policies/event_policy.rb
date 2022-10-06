@@ -31,8 +31,6 @@ class EventPolicy < ApplicationPolicy
     create?
   end
 
-  private
-
   class Scope < Scope
     def resolve
       scope.all

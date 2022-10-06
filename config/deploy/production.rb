@@ -9,7 +9,6 @@
 
 server 'railsbbq.monster', user: 'artem', roles: %w[app db web resque_worker]
 
-
 # При запуске воркера загружать Rails приложение
 set :resque_environment_task, true
 # Будет запущен один воркер, обслуживающий очереди с именем "tubilinkz*"
