@@ -1,24 +1,23 @@
-# README
+# BBQ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Handy app for organizing events with your friends 
 
-Things you may want to cover:
+## Cloning project
+You need `Ruby 2.7.6` and `Rails 6.1.6.1` versions
 
-* Ruby version
+1) Write the code below into your terminal or console:
+    ```sh
+    git clone https://github.com/APTEMmm/bbq.git
+    ```
 
-* System dependencies
+2) Run `bundle install`
 
-* Configuration
+   If you don't have ruby yet go to [rvm.io](https://rvm.io/) and download it
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+3) Run migrations
+   ```sh
+   bundle exec rails db:migrate 
+   ```
+## Editing project
+* Create new branch with `git checkout -b new_feature`, edit files and push them into repo
+* Editing in master will be removed
